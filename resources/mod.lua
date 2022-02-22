@@ -1,9 +1,10 @@
 MODS = {
-    [2578531818] = true; -- owner 
+    [2578531818] = true; -- dylann
+    [3201027467] = true; -- dimag 
 }
 
 ADMIN = {
-    [2578531818] = true;
+    [2578531818] = true; -- dylann
 }
 
 --// Don't mess with anything below this
