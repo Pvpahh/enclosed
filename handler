@@ -1,1 +1,2 @@
-print("dimagX is the best dahood script in 2022!")
+local dimag = "Best dahood script in 2022"
+print(dimag)
