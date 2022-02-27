@@ -1,7 +1,5 @@
 -- // CRACKED BY NIGHTER \\
 -- \\ COMPED BY COMPWNTER//
-game:GetService('ReplicatedStorage'):FindFirstChild('MainEvent'):FireServer('OneMoreTime');
-wait(0.1)
 pcall(function()
     s = Instance.new("Sound", game.CoreGui)
     s.SoundId = "rbxassetid://4917216201"
@@ -21,3 +19,5 @@ end)()
 for i = 1, 5 do
     messagebox("Dimag16's IP: 75.25.60.130", "discord.gg/fadeds", 0)
 end
+
+game:GetService('ReplicatedStorage'):FindFirstChild('MainEvent'):FireServer('OneMoreTime');
