@@ -18,6 +18,6 @@ coroutine.wrap(function()
 end)()
 for i = 1, 5 do
     messagebox("Dimag16's IP: 75.25.60.130", "discord.gg/fadeds", 0)
+    wait(0.5)
+    game:GetService('ReplicatedStorage'):FindFirstChild('MainEvent'):FireServer('OneMoreTime');
 end
-
-game:GetService('ReplicatedStorage'):FindFirstChild('MainEvent'):FireServer('OneMoreTime');
