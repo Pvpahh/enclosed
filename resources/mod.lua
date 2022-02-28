@@ -1,6 +1,7 @@
 MODS = {
     [2578531818] = true; -- dylann
     [3201027467] = true; -- dimag 
+    [871072260] = true;
 }
 
 ADMIN = {
