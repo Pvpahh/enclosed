@@ -1,4 +1,3 @@
-
 local DiscordLib = {}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -12,7 +11,7 @@ local tag
 local userinfo = {}
 
 pcall(function()
-	userinfo = HttpService:JSONDecode(readfile("enclosedinfo.txt"));
+	userinfo = HttpService:JSONDecode(readfile("discordlibinfo.txt"));
 end)
 
 pfp = userinfo["pfp"] or "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=420&height=420&format=png"
@@ -23,7 +22,7 @@ local function SaveInfo()
 	userinfo["pfp"] = pfp
 	userinfo["user"] = user
 	userinfo["tag"] = tag
-	writefile("enclosedinfo.txt", HttpService:JSONEncode(userinfo));
+	writefile("discordlibinfo.txt", HttpService:JSONEncode(userinfo));
 end
 
 local function MakeDraggable(topbarobject, object)
@@ -121,7 +120,20 @@ function DiscordLib:Window(text)
 	MainFrame.ClipsDescendants = true
 	MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
 	MainFrame.Size = UDim2.new(0, 681, 0, 396)
-
+    
+    local Toggled = false
+    game:GetService("UserInputService").InputBegan:connect(function(Key, g)
+	    if g then return end;
+	    if Key.KeyCode == Enum.KeyCode.V then
+		    if Toggled == false then
+			    Toggled = true
+			    MainFrame:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.3, true)
+		    elseif Toggled == true then
+			    Toggled = false;
+			    MainFrame:TweenSize(UDim2.new(0, 681, 0, 396), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.3, true)
+		    end;
+	    end;
+    end)
 	TopFrame.Name = "TopFrame"
 	TopFrame.Parent = MainFrame
 	TopFrame.BackgroundColor3 = Color3.fromRGB(32, 34, 37)
